@@ -111,7 +111,7 @@ function AppShell() {
           <Route path="*" element={<HomeRedirect />} />
         </Routes>
       </div>
-      <Footer />
+      {!isLanding && <Footer />}
     </div>
   );
 }

@@ -110,21 +110,28 @@ export function Navbar() {
 
         {/* Landing marketing nav */}
         {isLanding && (
-          <nav className="hidden md:flex items-center gap-6 text-sm font-bold text-white/85">
-            <a href="#how-it-works" className="hover:text-white transition-colors">
-              How it works
+          <nav className="hidden lg:flex items-center gap-5 text-xs lg:text-sm font-bold text-white/90">
+            <a href="#search-rides" className="hover:text-[#FFB74D] transition-colors">
+              Rides & Transfers
             </a>
-            <Link to={ROUTES.ONBOARDING_STEP(1)} className="hover:text-white transition-colors">
-              Get started
-            </Link>
-            <Link to={ROUTES.LOGIN('driver')} className="hover:text-white transition-colors">
-              Drivers
+            <a href="#popular-destinations" className="hover:text-[#FFB74D] transition-colors">
+              Popular Routes
+            </a>
+            <a href="#loyalty-club" className="hover:text-[#FFB74D] transition-colors flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] animate-pulse" />
+              <span>Trip Club</span>
+            </a>
+            <a href="#guarantee" className="hover:text-[#FFB74D] transition-colors">
+              Guarantee
+            </a>
+            <Link to={ROUTES.LOGIN('driver')} className="hover:text-[#FFB74D] transition-colors">
+              Drive With Us
             </Link>
             <Link
               to={ROUTES.LOGIN('venue_partner')}
-              className="hover:text-white transition-colors"
+              className="hover:text-[#FFB74D] transition-colors"
             >
-              Partners
+              Venue Partners
             </Link>
           </nav>
         )}
@@ -200,6 +207,12 @@ export function Navbar() {
         )}
 
         <div className="flex items-center gap-2 sm:gap-2.5">
+          {isLanding && (
+            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/10 border border-white/15 text-[11px] font-bold text-white/90 select-none">
+              <span>🇳🇿 NZD ($)</span>
+            </div>
+          )}
+
           {isLanding && !isAuthenticated && (
             <>
               <button
