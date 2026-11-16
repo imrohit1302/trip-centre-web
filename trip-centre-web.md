@@ -50,7 +50,7 @@ All screen transitions, onboarding progression, persona choices, authentication 
 
 | Path | Component / Screen | Purpose & Flow |
 |---|---|---|
-| `/` | `Navigate to="/onboarding/1"` | Root redirect |
+| `/` | `LandingPage` | Kiwi.com-inspired ride booking portal (Hero, Search Widget, Club, Guarantee, Destinations, Routes, Directory, Footer) |
 | `/onboarding` | `Navigate to="/onboarding/1"` | Index redirect |
 | `/onboarding/1` | `OnboardingPage` (Step 1) | *"Book ahead, travel stress-free"* slide |
 | `/onboarding/2` | `OnboardingPage` (Step 2) | *"We match you with the right driver"* slide |
