@@ -16,6 +16,7 @@ import { AuthPage } from './pages/AuthPage';
 import { CustomerDashboardPage } from './pages/CustomerDashboardPage';
 import { DriverDashboardPage } from './pages/DriverDashboardPage';
 import { VenuePartnerDashboardPage } from './pages/VenuePartnerDashboardPage';
+import { ResellerAgentDashboardPage } from './pages/ResellerAgentDashboardPage';
 
 function Guest({ children }: { children: ReactNode }) {
   return <GuestOnly>{children}</GuestOnly>;
@@ -107,6 +108,27 @@ function AppShell() {
           <Route path="/venue_partner/verify-code" element={<Navigate to="/venue-partner/verify-code" replace />} />
           <Route path="/venue_partner/reset-password" element={<Navigate to="/venue-partner/reset-password" replace />} />
           <Route path="/venue_partner/dashboard" element={<Navigate to="/venue-partner/dashboard" replace />} />
+
+          <Route path="/reseller-agent/login" element={<Guest><AuthPage role="reseller_agent" initialMode="login" /></Guest>} />
+          <Route path="/reseller-agent/signup" element={<Guest><AuthPage role="reseller_agent" initialMode="signup" /></Guest>} />
+          <Route path="/reseller-agent/forgot-password" element={<Guest><AuthPage role="reseller_agent" initialMode="forgot" forgotStep="request_code" /></Guest>} />
+          <Route path="/reseller-agent/verify-code" element={<Guest><AuthPage role="reseller_agent" initialMode="forgot" forgotStep="verify_code" /></Guest>} />
+          <Route path="/reseller-agent/reset-password" element={<Guest><AuthPage role="reseller_agent" initialMode="forgot" forgotStep="reset_password" /></Guest>} />
+          <Route
+            path="/reseller-agent/dashboard"
+            element={
+              <RequireAuth role="reseller_agent">
+                <ResellerAgentDashboardPage />
+              </RequireAuth>
+            }
+          />
+
+          <Route path="/reseller_agent/login" element={<Navigate to="/reseller-agent/login" replace />} />
+          <Route path="/reseller_agent/signup" element={<Navigate to="/reseller-agent/signup" replace />} />
+          <Route path="/reseller_agent/forgot-password" element={<Navigate to="/reseller-agent/forgot-password" replace />} />
+          <Route path="/reseller_agent/verify-code" element={<Navigate to="/reseller-agent/verify-code" replace />} />
+          <Route path="/reseller_agent/reset-password" element={<Navigate to="/reseller-agent/reset-password" replace />} />
+          <Route path="/reseller_agent/dashboard" element={<Navigate to="/reseller-agent/dashboard" replace />} />
 
           <Route path="*" element={<HomeRedirect />} />
         </Routes>

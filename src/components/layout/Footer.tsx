@@ -42,6 +42,12 @@ export function Footer() {
           >
             Partner
           </Link>
+          <Link
+            to={ROUTES.LOGIN('reseller_agent')}
+            className="hover:text-[#FF8A00] transition-colors"
+          >
+            Reseller
+          </Link>
         </div>
 
         <span className="text-[10px] sm:text-[11px] opacity-70">NZ & beyond</span>

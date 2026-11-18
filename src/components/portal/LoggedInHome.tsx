@@ -1,4 +1,4 @@
-import { Building2, Car, CheckCircle2, LogOut, User } from 'lucide-react';
+import { Briefcase, Building2, Car, CheckCircle2, LogOut, User } from 'lucide-react';
 import { Button } from '../common/Button';
 import { ROLE_AUTH_CONFIGS } from '../../constants/roleAuthData';
 import { useRoleSession } from '../../hooks/useRoleSession';
@@ -7,6 +7,7 @@ import type { UserRoleType } from '../../types/user.types';
 function RoleIcon({ role }: { role: UserRoleType }) {
   if (role === 'driver') return <Car size={28} />;
   if (role === 'venue_partner') return <Building2 size={28} />;
+  if (role === 'reseller_agent') return <Briefcase size={28} />;
   return <User size={28} />;
 }
 

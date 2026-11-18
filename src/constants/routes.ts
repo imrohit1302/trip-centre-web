@@ -9,6 +9,7 @@ export const parseRoleFromSlug = (slug?: string): UserRoleType => {
   if (!slug) return 'customer';
   const clean = slug.toLowerCase().replace(/_/g, '-');
   if (clean === 'venue-partner' || clean === 'venue') return 'venue_partner';
+  if (clean === 'reseller-agent' || clean === 'reseller') return 'reseller_agent';
   if (clean === 'driver') return 'driver';
   return 'customer';
 };

@@ -6,7 +6,7 @@ export interface RoleAuthConfig {
   badge: string;
   loginPillText: string;
   signupPillText: string;
-  iconName: 'user' | 'van' | 'building';
+  iconName: 'user' | 'van' | 'building' | 'briefcase';
   heroBadge: string;
   heroHeading: string;
   heroSubtitle: string;
@@ -113,6 +113,38 @@ export const ROLE_AUTH_CONFIGS: Record<UserRoleType, RoleAuthConfig> = {
       password: 'Password123!',
     },
     dashboardRoute: '/venue-partner/dashboard',
+  },
+
+  reseller_agent: {
+    role: 'reseller_agent',
+    title: 'Reseller Agent',
+    badge: 'Travel Agents & Resellers',
+    loginPillText: 'Logging in as Reseller Agent',
+    signupPillText: 'Signing up as Reseller Agent',
+    iconName: 'briefcase',
+    heroBadge: 'Agency Reseller Network',
+    heroHeading: 'Book transfers for your clients with IATA-ready tools.',
+    heroSubtitle:
+      'Manage agency bookings, share live trip updates with travellers, and grow monthly volume with Trip Centre’s verified chauffeur network.',
+    features: [
+      { title: 'Book airport transfers and city rides on behalf of clients', iconType: 'calendar' },
+      { title: 'IATA-ready agency profile with document verification', iconType: 'shield' },
+      { title: 'Transparent fares and clear monthly booking volume tracking', iconType: 'dollar' },
+      { title: 'Real-time trip status for agents and travellers', iconType: 'map' },
+    ],
+    testimonial: {
+      quote:
+        'Trip Centre lets our agency place client transfers in minutes — drivers are reliable and the booking trail is clear.',
+      author: 'Priya N., Auckland Travel Reseller',
+      rating: 5,
+    },
+    demoCredentials: {
+      email: 'reseller@yopmail.com',
+      name: 'Pacific Bookings Agency',
+      phone: '211223344',
+      password: 'Password123!',
+    },
+    dashboardRoute: '/reseller-agent/dashboard',
   },
 };
 

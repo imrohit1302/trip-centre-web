@@ -5,6 +5,7 @@ import {
   User, 
   Car, 
   Hotel, 
+  Briefcase,
   X, 
   ArrowLeft, 
   CheckCircle2, 
@@ -67,6 +68,24 @@ export const RolePortalModal: React.FC<RolePortalModalProps> = ({
           badge: 'Hotels, Hostels & Travel Agencies',
           demoEmail: 'venue@yopmail.com',
           apiEndpoint: '/venue-partner/auth/login',
+        };
+      case 'reseller_agent':
+        return {
+          title: 'Reseller Agent Portal',
+          subtitle: 'Book airport transfers and city rides for clients with IATA-ready agency tools.',
+          icon: <Briefcase size={28} className="text-[#FF8A00]" />,
+          badge: 'Travel Agents & Resellers',
+          demoEmail: 'reseller@yopmail.com',
+          apiEndpoint: '/reseller-agent/auth/login',
+        };
+      default:
+        return {
+          title: 'Customer Portal',
+          subtitle: 'Schedule upcoming rides, manage active journeys, and view receipts.',
+          icon: <User size={28} className="text-[#FF8A00]" />,
+          badge: 'Rider & Passenger',
+          demoEmail: 'customer@yopmail.com',
+          apiEndpoint: '/customer/auth/login',
         };
     }
   };

@@ -61,6 +61,13 @@ export const ROLE_OPTIONS: RoleOption[] = [
     description: 'Hostel / agency booking on behalf of guests',
     iconName: 'hotel',
     badge: 'Hotels & Concierge'
+  },
+  {
+    id: 'reseller_agent',
+    title: 'Reseller Agent',
+    description: 'Book transfers for clients as a travel reseller',
+    iconName: 'briefcase',
+    badge: 'Travel Agencies'
   }
 ];
 

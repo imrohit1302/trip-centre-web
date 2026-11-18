@@ -1,6 +1,7 @@
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { ThemeToggle } from '../common/ThemeToggle';
 import {
+  Briefcase,
   Building2,
   Car,
   ChevronRight,
@@ -49,6 +50,14 @@ export function Navbar() {
         icon: <Building2 size={13} className="text-[#3B82F6]" />,
         badgeBg:
           'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
+      };
+    }
+    if (currentRole === 'reseller_agent') {
+      return {
+        title: 'Reseller Agent',
+        icon: <Briefcase size={13} className="text-[#A855F7]" />,
+        badgeBg:
+          'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20',
       };
     }
     return {
@@ -132,6 +141,12 @@ export function Navbar() {
               className="hover:text-[#FFB74D] transition-colors"
             >
               Venue Partners
+            </Link>
+            <Link
+              to={ROUTES.LOGIN('reseller_agent')}
+              className="hover:text-[#FFB74D] transition-colors"
+            >
+              Reseller Agents
             </Link>
           </nav>
         )}

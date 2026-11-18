@@ -1468,9 +1468,9 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* 8. DRIVER & VENUE PARTNER CARDS */}
+      {/* 8. DRIVER, VENUE & RESELLER PARTNER CARDS */}
       <section className="w-full py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Driver Card */}
           <div className="rounded-3xl bg-gradient-to-br from-[#0B2A4A] to-[#1E4A78] text-white p-7 shadow-xl flex flex-col justify-between">
             <div>
@@ -1483,7 +1483,7 @@ export function LandingPage() {
                 guaranteed pre-booked fares, 85%+ driver payout, and weekly direct deposits.
               </p>
             </div>
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <button
                 type="button"
                 onClick={() => navigate(ROUTES.SIGNUP('driver'))}
@@ -1513,7 +1513,7 @@ export function LandingPage() {
                 click. Earn venue partner commissions and deliver luxury guest experiences.
               </p>
             </div>
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <button
                 type="button"
                 onClick={() => navigate(ROUTES.SIGNUP('venue_partner'))}
@@ -1527,6 +1527,36 @@ export function LandingPage() {
                 className="rounded-xl border border-white/30 text-white hover:bg-white/10 px-4 py-2.5 text-xs font-bold transition-colors"
               >
                 Venue Log In
+              </button>
+            </div>
+          </div>
+
+          {/* Reseller Agent Card */}
+          <div className="rounded-3xl bg-gradient-to-br from-[#3B0764] to-[#5B21B6] text-white p-7 shadow-xl border border-violet-500/30 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+            <div>
+              <span className="text-[10px] font-extrabold uppercase tracking-wider text-violet-200">
+                For Travel Resellers
+              </span>
+              <h3 className="mt-1 text-2xl font-black">Reseller Agent Network</h3>
+              <p className="mt-2 text-xs sm:text-sm text-violet-100/90 leading-relaxed">
+                Book airport transfers and city rides for your clients with IATA-ready tools,
+                clear fares, and live trip updates your travellers can trust.
+              </p>
+            </div>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={() => navigate(ROUTES.SIGNUP('reseller_agent'))}
+                className="rounded-xl bg-violet-500 hover:bg-violet-400 text-white px-5 py-2.5 text-xs font-black transition-colors"
+              >
+                Join as Reseller
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate(ROUTES.LOGIN('reseller_agent'))}
+                className="rounded-xl border border-white/30 text-white hover:bg-white/10 px-4 py-2.5 text-xs font-bold transition-colors"
+              >
+                Reseller Log In
               </button>
             </div>
           </div>
@@ -1663,6 +1693,15 @@ export function LandingPage() {
                     className="hover:text-[#FF8A00] transition-colors"
                   >
                     Venue & Concierge Partner
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => navigate(ROUTES.LOGIN('reseller_agent'))}
+                    className="hover:text-[#FF8A00] transition-colors"
+                  >
+                    Reseller Agent Portal
                   </button>
                 </li>
                 <li>

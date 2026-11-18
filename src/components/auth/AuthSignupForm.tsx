@@ -3,6 +3,7 @@ import {
   User, 
   Car, 
   Building2, 
+  Briefcase,
   Mail, 
   Lock, 
   Eye, 
@@ -63,6 +64,10 @@ export const AuthSignupForm: React.FC<AuthSignupFormProps> = ({
         return <Car size={13} className="text-slate-600 dark:text-slate-300" />;
       case 'building':
         return <Building2 size={13} className="text-slate-600 dark:text-slate-300" />;
+      case 'briefcase':
+        return <Briefcase size={13} className="text-slate-600 dark:text-slate-300" />;
+      default:
+        return <User size={13} className="text-slate-600 dark:text-slate-300" />;
     }
   };
 

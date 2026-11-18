@@ -12,6 +12,7 @@ import { ROUTES } from '../constants/routes';
 import {
   AUTH_ACTIVE_ROLE_KEY,
   AUTH_TOKEN_KEY,
+  allUserRoles,
   authUserKey,
   getStoredActiveRole,
   getStoredToken,
@@ -69,9 +70,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 
   const clearSession = useCallback((role?: UserRoleType) => {
-    const roles: UserRoleType[] = role
-      ? [role]
-      : ['customer', 'driver', 'venue_partner'];
+    const roles: UserRoleType[] = role ? [role] : allUserRoles();
     localStorage.removeItem(AUTH_TOKEN_KEY);
     localStorage.removeItem(AUTH_ACTIVE_ROLE_KEY);
     roles.forEach((r) => localStorage.removeItem(authUserKey(r)));

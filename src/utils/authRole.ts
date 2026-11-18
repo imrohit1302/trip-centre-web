@@ -1,9 +1,17 @@
 import type { UserRoleType } from '../types/user.types';
 
+const ALL_ROLES: UserRoleType[] = [
+  'customer',
+  'driver',
+  'venue_partner',
+  'reseller_agent',
+];
+
 /** API path segment for role-scoped auth routes */
 export function authRolePrefix(role: UserRoleType): string {
   if (role === 'driver') return 'driver';
   if (role === 'venue_partner') return 'venue-partner';
+  if (role === 'reseller_agent') return 'reseller-agent';
   return 'customer';
 }
 
@@ -39,7 +47,12 @@ export function getStoredToken(): string | null {
 export function getStoredActiveRole(): UserRoleType | null {
   try {
     const role = localStorage.getItem(AUTH_ACTIVE_ROLE_KEY);
-    if (role === 'customer' || role === 'driver' || role === 'venue_partner') {
+    if (
+      role === 'customer' ||
+      role === 'driver' ||
+      role === 'venue_partner' ||
+      role === 'reseller_agent'
+    ) {
       return role;
     }
     return null;
@@ -56,4 +69,8 @@ export function getStoredUser(role: UserRoleType): Record<string, unknown> | nul
   } catch {
     return null;
   }
+}
+
+export function allUserRoles(): UserRoleType[] {
+  return [...ALL_ROLES];
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import { User, Car, Building2, Check } from 'lucide-react';
+import { User, Car, Building2, Briefcase, Check } from 'lucide-react';
 import { UserRoleType } from '../../types/user.types';
 
 interface RadioCardProps {
   id: UserRoleType;
   title: string;
   description: string;
-  iconName: 'user' | 'car' | 'hotel' | 'building';
+  iconName: 'user' | 'car' | 'hotel' | 'building' | 'briefcase';
   isSelected: boolean;
   onSelect: (id: UserRoleType) => void;
   badge?: string;
@@ -30,6 +30,8 @@ export const RadioCard: React.FC<RadioCardProps> = ({
       case 'hotel':
       case 'building':
         return <Building2 size={22} className={isSelected ? 'text-[#FF8A00]' : 'text-gray-600 dark:text-gray-300'} />;
+      case 'briefcase':
+        return <Briefcase size={22} className={isSelected ? 'text-[#FF8A00]' : 'text-gray-600 dark:text-gray-300'} />;
       default:
         return null;
     }

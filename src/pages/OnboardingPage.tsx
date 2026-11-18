@@ -12,6 +12,8 @@ export const OnboardingPage: React.FC = () => {
       navigate('/driver/login');
     } else if (role === 'venue_partner') {
       navigate('/venue-partner/login');
+    } else if (role === 'reseller_agent') {
+      navigate('/reseller-agent/login');
     }
   };
 

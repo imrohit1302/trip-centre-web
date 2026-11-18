@@ -40,7 +40,10 @@ export const WebResponsiveView: React.FC<WebResponsiveViewProps> = ({
   const [selectedRole, setSelectedRole] = useState<UserRoleType | null>(() => {
     const searchParams = new URLSearchParams(location.search);
     const roleParam = searchParams.get('role') as UserRoleType | null;
-    if (roleParam && ['customer', 'driver', 'venue_partner'].includes(roleParam)) {
+    if (
+      roleParam &&
+      ['customer', 'driver', 'venue_partner', 'reseller_agent'].includes(roleParam)
+    ) {
       return roleParam;
     }
     return null;
@@ -50,7 +53,10 @@ export const WebResponsiveView: React.FC<WebResponsiveViewProps> = ({
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const roleParam = searchParams.get('role') as UserRoleType | null;
-    if (roleParam && ['customer', 'driver', 'venue_partner'].includes(roleParam)) {
+    if (
+      roleParam &&
+      ['customer', 'driver', 'venue_partner', 'reseller_agent'].includes(roleParam)
+    ) {
       setSelectedRole(roleParam);
     }
   }, [location.search]);
@@ -302,7 +308,7 @@ export const WebResponsiveView: React.FC<WebResponsiveViewProps> = ({
             <div className="pt-4 mt-4 border-t border-gray-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
               <span className="text-xs text-gray-400">
                 {selectedRole
-                  ? `Ready to proceed as: ${selectedRole.replace('_', ' ').toUpperCase()}`
+                  ? `Ready to proceed as: ${selectedRole.replace(/_/g, ' ').toUpperCase()}`
                   : 'Please pick an option to continue'}
               </span>
 

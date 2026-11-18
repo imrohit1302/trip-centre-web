@@ -1,11 +1,15 @@
-export type UserRoleType = 'customer' | 'driver' | 'venue_partner';
+export type UserRoleType =
+  | 'customer'
+  | 'driver'
+  | 'venue_partner'
+  | 'reseller_agent';
 
 export interface RoleOption {
   id: UserRoleType;
   title: string;
   description: string;
   badge?: string;
-  iconName: 'user' | 'car' | 'hotel';
+  iconName: 'user' | 'car' | 'hotel' | 'briefcase';
 }
 
 export interface UserSession {
@@ -15,4 +19,3 @@ export interface UserSession {
   email?: string;
   token?: string;
 }
-

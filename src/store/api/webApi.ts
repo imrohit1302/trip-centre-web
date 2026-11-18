@@ -13,6 +13,7 @@ import type { UserRoleType } from '../../types/user.types';
 import {
   AUTH_ACTIVE_ROLE_KEY,
   AUTH_TOKEN_KEY,
+  allUserRoles,
   authRolePrefix,
   authUserKey,
   getStoredActiveRole,
@@ -40,7 +41,7 @@ function clearLocalSession() {
     localStorage.removeItem(AUTH_TOKEN_KEY);
     localStorage.removeItem(AUTH_ACTIVE_ROLE_KEY);
     if (role) localStorage.removeItem(authUserKey(role));
-    (['customer', 'driver', 'venue_partner'] as UserRoleType[]).forEach((r) => {
+    allUserRoles().forEach((r) => {
       localStorage.removeItem(authUserKey(r));
     });
   } catch {

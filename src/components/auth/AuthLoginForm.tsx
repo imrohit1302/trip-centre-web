@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Lock, Eye, EyeOff, User, Car, Building2, ArrowLeft, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, User, Car, Building2, Briefcase, ArrowLeft, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { Button } from '../common/Button';
 import { UserRoleType } from '../../types/user.types';
 import type { AuthUser } from '../../types/auth.types';
@@ -39,6 +39,10 @@ export const AuthLoginForm: React.FC<AuthLoginFormProps> = ({
         return <Car size={13} className="text-slate-600 dark:text-slate-300" />;
       case 'building':
         return <Building2 size={13} className="text-slate-600 dark:text-slate-300" />;
+      case 'briefcase':
+        return <Briefcase size={13} className="text-slate-600 dark:text-slate-300" />;
+      default:
+        return <User size={13} className="text-slate-600 dark:text-slate-300" />;
     }
   };
 
